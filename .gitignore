@@ -1,0 +1,81 @@
+# -----------------------------------------------------------------------------
+# Secrets and credentials — NEVER commit these
+# -----------------------------------------------------------------------------
+.env
+.env.local
+.env.*.local
+backend/.env
+frontend/.env
+backend/serviceAccountKey.json
+*.pem
+*.key
+*.p12
+*.pfx
+
+# -----------------------------------------------------------------------------
+# Python / Backend
+# -----------------------------------------------------------------------------
+backend/venv/
+backend/__pycache__/
+backend/app/**/__pycache__/
+backend/*.py[cod]
+backend/*$py.class
+backend/.pytest_cache/
+backend/.mypy_cache/
+backend/.coverage
+backend/htmlcov/
+backend/.ruff_cache/
+backend/dist/
+backend/build/
+backend/*.egg-info/
+backend/.tox/
+backend/.venv/
+
+# -----------------------------------------------------------------------------
+# Node / Frontend
+# -----------------------------------------------------------------------------
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/.vite/
+frontend/.cache/
+frontend/coverage/
+frontend/*.log
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+
+# -----------------------------------------------------------------------------
+# Package manager lock files (uncomment only if you want to ignore them)
+# -----------------------------------------------------------------------------
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# -----------------------------------------------------------------------------
+# Operating System and IDE
+# -----------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# -----------------------------------------------------------------------------
+# Git and local runtime
+# -----------------------------------------------------------------------------
+.git/
+logs/
+*.log
+coverage/
+
+# -----------------------------------------------------------------------------
+# Build artifacts
+# -----------------------------------------------------------------------------
+dist/
+build/
+*.db
+backend/data/*.db
