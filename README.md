@@ -138,6 +138,16 @@ cp frontend/.env.example frontend/.env
 | `DATABASE_URL` | PostgreSQL connection string, e.g. `postgresql://user:pass@host:port/db` |
 | `RAZORPAY_KEY_ID` | Razorpay key id (test or live) |
 | `RAZORPAY_KEY_SECRET` | Razorpay key secret (test or live) |
+| `FIREBASE_TYPE` | Firebase account type (`service_account`) |
+| `FIREBASE_PROJECT_ID` | Firebase project id |
+| `FIREBASE_PRIVATE_KEY_ID` | Firebase private key id |
+| `FIREBASE_PRIVATE_KEY` | Firebase private key |
+| `FIREBASE_CLIENT_EMAIL` | Firebase service account email |
+| `FIREBASE_CLIENT_ID` | Firebase client id |
+| `FIREBASE_AUTH_URI` | Firebase authentication URI |
+| `FIREBASE_TOKEN_URI` | Firebase token URI |
+| `FIREBASE_AUTH_PROVIDER_X509_CERT_URL` | Firebase certificate provider URL |
+| `FIREBASE_CLIENT_X509_CERT_URL` | Firebase client certificate URL |
 
 > **Backend also requires** a `serviceAccountKey.json` file in the `backend/` directory for Firebase Admin. It is **not** an environment variable, but it is required for the server to start. See [Firebase Setup](#firebase-setup).
 
