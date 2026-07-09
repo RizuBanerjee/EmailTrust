@@ -7,11 +7,6 @@ from firebase_admin import (
     auth
 )
 
-from dotenv import load_dotenv
-
-
-load_dotenv()
-
 
 firebase_config = {
 
@@ -33,7 +28,10 @@ firebase_config = {
     "private_key":
         os.getenv(
             "FIREBASE_PRIVATE_KEY"
-        ).replace("\\n", "\n"),
+        ).replace(
+            "\\n",
+            "\n"
+        ),
 
     "client_email":
         os.getenv(
@@ -57,13 +55,14 @@ firebase_config = {
 
     "auth_provider_x509_cert_url":
         os.getenv(
-            "FIREBASE_AUTH_PROVIDER_CERT_URL"
+            "FIREBASE_AUTH_PROVIDER_X509_CERT_URL"
         ),
 
     "client_x509_cert_url":
         os.getenv(
-            "FIREBASE_CLIENT_CERT_URL"
+            "FIREBASE_CLIENT_X509_CERT_URL"
         ),
+
 }
 
 
@@ -78,10 +77,26 @@ if not firebase_admin._apps:
     )
 
 
-def verify_firebase_token(token):
+def verify_firebase_token(
+    token
+):
 
-    decoded_token = auth.verify_id_token(
-        token
-    )
+    try:
 
-    return decoded_token
+        decoded_token = (
+            auth.verify_id_token(
+                token
+            )
+        )
+
+        return decoded_token
+
+
+    except Exception as e:
+
+        print(
+            "Firebase token error:",
+            e
+        )
+
+        return None
